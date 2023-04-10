@@ -1,7 +1,7 @@
 function rockPaperScissors(player){
-    const rock='Rock';
-    const paper='Paper';
-    const scissors='Scissors';
+    const rock='\x1b[90mRock\x1b[0m';
+    const paper='\x1b[97mPaper\x1b[0m';
+    const scissors='\x1b[95mScissors\x1b[0m';
     player=player.toLowerCase()
     if(player=='r'||player=='rock'){
         player=rock
@@ -21,12 +21,15 @@ function rockPaperScissors(player){
     }
     console.log(`You choose ${player}\nComputer chooses ${compMove}`);
     if(player==rock&&compMove==scissors||player==paper&&compMove==rock||player==scissors&&compMove==paper){
-        console.log('You win!');
+        console.log('\x1b[92mYou win!\x1b[0m');
     }else if(player==compMove){
-        console.log('Draw!')
+        console.log('\x1b[93mDraw!\x1b[0m')
     }else{
-        console.log('You lose!')
+        console.log('\x1b[91mYou lose!\x1b[0m');
     }
+    console.log(`The score is: You \x1b[92m${pScore}\x1b[0m : \x1b[91m${cScore}\x1b[0m Comp`);
 }
-rockPaperScissors('s')
+rockPaperScissors('r');
+
+
 
